@@ -1,0 +1,13 @@
+<div  class="pagination flex layout-align-center-center" >
+    <a ng-if=" page >1 && (total/limit) >14 " ng-click="changePage()">
+        <md-icon md-font-set="fa fa-chevron-left"></md-icon>
+    </a>
+    <a ng-repeat="i in []|range:pages" ng-click="tmp=i+1;paginate(tmp);"
+       ng-class="{'active':page ==i+1}">
+        {{i+1}}
+    </a>
+    <a ng-if="(page<=(total/limit -1)) && (total/limit) >14"
+       ng-click="changePage(1)">
+        <md-icon md-font-set="fa fa-chevron-right"></md-icon>
+    </a>
+</div>

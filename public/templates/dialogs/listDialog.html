@@ -1,0 +1,32 @@
+<div layout-margin flex-xs=100>
+    <md-dialog >
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2></h2>
+                <span translate="{{tmp._id?'update_row' :'new_row'}}" translate-value-x="item">
+            </span>
+                <!--</h2>-->
+                <md-button class="md-icon-button closeDialog" ng-click="close()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div></div>
+            <form name="formName" ng-submit="formName.$valid && action(tmp,origin)" layout="row" novalidate layout-wrap layout-margin>
+                <md-input-container flex=grow>
+                    <input type=text required=true placeholder="{{::'name'|translate}}" ng-model="tmp.name" >
+                </md-input-container>
+                <md-input-container flex=grow>
+                    <input placeholder="{{::'price'|translate}}" ng-model="tmp.price" type=text numbers-only required=true >
+                </md-input-container>
+                 <md-input-container flex=grow>
+                    <input placeholder="{{::'brand'|translate}}" ng-model="tmp.brand" type=text  required=true >
+                </md-input-container>
+                <md-button flex="grow" class="md-raised  md-primary" ng-disabled="formName.$invalid" type="submit">
+                    {{(tmp._id?'update' :'save') | translate}}
+                </md-button>
+            </form>
+        </md-dialog-content>
+    </md-dialog>
+</div>

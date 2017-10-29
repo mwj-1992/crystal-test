@@ -1,0 +1,31 @@
+<html ng-app="app" ng-controller="mainCtrl" ng-cloak dir="{{lang=='en'?'ltr':'rtl'}}">
+<title> {{($state.current.name | translate) || 'Mhd Wael Jazmaty'}}</title>
+
+<head>
+    <base href="/">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="images/user.jpg" sizes="36x36" />
+    <link rel="stylesheet" href="dist/css/angular-material.min.css">
+    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+    <link rel="stylesheet" ng-href="{{'dist/css/myStyle_'+lang+'.min.css'}}">
+</head>
+
+<body layout="column">
+    <md-progress-linear ng-if="$http.pendingRequests.length" id="submitIndicator" md-mode="indeterminate"></md-progress-linear>
+    <md-nav-bar md-no-ink nav-bar-aria-label="navbar ">
+        <md-nav-item class="md-primary " md-nav-href="#/{{lang + '/item'}} " name="item">
+            <md-icon class="navIcon " md-svg-src="icons/lists.svg "></md-icon>
+            {{'itemTable'|translate}}
+        </md-nav-item>
+    </md-nav-bar>
+    <div ui-view flex layout /></div>
+    <script type="text/javascript " src="dist/js/vendor.min.js "></script>
+    <script async type="text/javascript " src="dist/js/system-min.js "></script>
+</body>
+<footer>
+    <a href="https://www.linkedin.com/in/mwjprog/">
+    Powered By Mhd Wael Jazmaty
+    </a>
+</footer>
+
+</html>

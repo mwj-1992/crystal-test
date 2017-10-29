@@ -1,0 +1,16 @@
+{
+    "price": "السعر",
+    "brand": "المراكة",
+    "profile": "Profile",
+    "item_table": "جدول المواد",
+    "itemTable": "المواد",
+    "create_at": "تاريخ الإضافة",
+    "name": "الاسم",
+    "no": "الرقم",
+    "new_row": "إضافة ",
+    "update_row": "تعديل",
+    "del_conf": "تأكيد الحذف !",
+    "u_will_rm_record": "انت على وشك حذف السجل من النظام كليًّا",
+    "agree": "نعم",
+    "notAgree": "لا"
+}

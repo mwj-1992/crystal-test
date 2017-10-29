@@ -1,0 +1,53 @@
+<div flex layout-wrap ng-controller='listCtrl'>
+    <h3 class="md-headline text-center" flex="100">
+    {{::'item_table'|translate}}
+     <!-- <span>{{mainService.get().screens[$state.params.parentState].childs|heading :'key':$state.current.name }}</span> -->
+        <md-button class="md-fab md-mini md-primary " ng-click="openDialog($event)" id="addBtn">
+            <md-icon>add</md-icon>
+        </md-button>
+     </h3>
+  <!--   <my-table schema="schema" flex=100 edit=openDialog(evt,item) records="mainService.get().data.data" total="{{mainService.get().data.total}}" delete=delete(item)></my-table> -->
+    <md-table-container ng-cloak>
+        <table md-table>
+            <thead md-head md-order="order">
+                <tr md-row>
+                    <th md-column>{{::'no'| translate}}</th>
+                    <th md-column md-order-by="name" >{{::'name' | translate }}</th>
+                    <th md-column md-order-by="price" >{{::'price' | translate }}</th>
+                    <th md-column md-order-by="brand" >{{::'brand' | translate }}</th>
+                    <th md-column md-order-by="create.at" >{{::'create_at' | translate }}</th>
+
+                    <th md-column="" >{{::'action' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="item in mainService.get().data.data |  orderBy :order as results  track by $index">
+                    <td md-cell> {{mainService.queryParams.page ? (mainService.queryParams.page-1)*10 +$index+1 : $index +1}} </td>
+                    <td md-cell >
+                        {{item.name}}
+                    </td>
+                    <td md-cell>
+                    	{{item.price | currency :'$':0}}
+                    </td>
+                    <td md-cell>
+                    	{{item.brand}}
+                    </td>
+                    <td md-cell>
+                    	{{item.create.at |stringToDate}}
+                    </td>
+                    <td md-cell >
+                        <md-button class="groupX md-icon-button" ng-click="openDialog($event,item)" >
+                            <i class="material-icons">edit</md-icon>
+                    </md-button>
+                    <md-button class="groupX md-icon-button" ng-click="delete(item)" >
+                        <md-icon class="material-icons">delete</md-icon>
+                    </md-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <custom-pagination total="{{mainService.get().data.pagingInfo.total}}"></custom-pagination>
+</md-table-container>
+
+     
+</div>

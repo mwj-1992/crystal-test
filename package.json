@@ -9,6 +9,7 @@
   "dependencies": {
     "async": "^2.1.5",
     "body-parser": "~1.16.0",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.1",
     "filewatcher": "*",
     "jade": "^1.11.0",
@@ -16,7 +17,8 @@
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
